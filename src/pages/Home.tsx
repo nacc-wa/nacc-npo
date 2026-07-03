@@ -1,25 +1,45 @@
 import {
+  ClipboardDocumentCheckIcon,
   MapPinIcon,
   TrophyIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
-const pillars = [
+const eventStandards = [
   {
-    title: 'Youth Competition',
-    description: 'Age-group tournaments from U-11 and up, built for organized, competitive cricket.',
-    icon: UserGroupIcon,
+    title: 'Clear Registration',
+    description: 'Teams and players get a straightforward path from interest to confirmed participation.',
+    icon: ClipboardDocumentCheckIcon,
   },
   {
-    title: 'Adult Competition',
-    description: 'Structured tournaments and community fixtures for clubs, teams, and independent players.',
+    title: 'Reliable Venues',
+    description: 'Grounds, dates, formats, and match logistics are coordinated before event day.',
+    icon: MapPinIcon,
+  },
+  {
+    title: 'Competitive Atmosphere',
+    description: 'Events are built around fair play, strong communication, and a shared respect for cricket.',
     icon: TrophyIcon,
   },
+];
+
+const audiences = [
   {
-    title: 'Regional Growth',
-    description: 'Washington is our current base, with a long-term vision to expand NACC events across every region.',
-    icon: MapPinIcon,
+    title: 'Youth U-11+',
+    description: 'Age-group events give young cricketers meaningful match experience.',
+  },
+  {
+    title: 'Adult Teams',
+    description: 'Clubs and captains can find organized formats with clear next steps.',
+  },
+  {
+    title: 'Families',
+    description: 'Tournament weekends create a shared place to support players and meet the community.',
+  },
+  {
+    title: 'Community Partners',
+    description: 'Grounds, sponsors, and volunteers help scale cricket beyond one event at a time.',
   },
 ];
 
@@ -42,9 +62,8 @@ export default function Home() {
               Growing cricket as a source of unity, joy, and opportunity.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-200 sm:text-xl">
-              NACC grows cricket in the USA by organizing inclusive Youth and Adult
-              tournaments that give players, teams, families, and communities a place
-              to compete, connect, and celebrate the sport.
+              NACC organizes Youth and Adult cricket tournaments that give players,
+              teams, families, and supporters a dependable place to compete and connect.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/register" className="btn btn-accent">
@@ -66,21 +85,21 @@ export default function Home() {
               <h2 className="section-title">A national cricket community built from the ground up.</h2>
             </div>
             <p className="section-copy">
-              Our mission is to inspire and grow a love for cricket across the USA by
-              creating well-run tournaments for players of all ages. We currently serve
-              cricket communities from Washington, with a long-term vision to bring NACC
-              events to more regions across the country.
+              We are rooted in Washington today and building toward a broader regional
+              calendar across the USA. Each event is a practical step toward stronger
+              cricket infrastructure, better team coordination, and more visible pathways
+              for the sport.
             </p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {pillars.map((pillar) => {
-              const Icon = pillar.icon;
+            {eventStandards.map((standard) => {
+              const Icon = standard.icon;
               return (
-                <article key={pillar.title} className="panel p-6">
+                <article key={standard.title} className="panel p-6">
                   <Icon className="mb-5 h-10 w-10 text-primary" />
-                  <h3 className="mb-3 text-xl font-bold">{pillar.title}</h3>
-                  <p className="text-sm leading-6 text-on-surface-variant">{pillar.description}</p>
+                  <h3 className="mb-3 text-xl font-bold">{standard.title}</h3>
+                  <p className="text-sm leading-6 text-on-surface-variant">{standard.description}</p>
                 </article>
               );
             })}
@@ -94,9 +113,8 @@ export default function Home() {
             <p className="eyebrow mb-3">Who we serve</p>
             <h2 className="section-title">Youth and Adult tournament pathways.</h2>
             <p className="section-copy mt-5">
-              NACC is designed for Youth players starting at U-11, Adult teams seeking
-              organized competition, families supporting the game, and community leaders
-              who want cricket events that are reliable, inclusive, and competitive.
+              NACC brings together the people required to make cricket weekends work:
+              players, captains, families, volunteers, sponsors, and grounds partners.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link to="/tournaments" className="btn btn-primary">
@@ -108,13 +126,11 @@ export default function Home() {
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {['Youth U-11+', 'Adult Teams', 'Families', 'Community partners'].map((audience) => (
-              <div key={audience} className="panel p-6">
+            {audiences.map((audience) => (
+              <div key={audience.title} className="panel p-6">
                 <UserGroupIcon className="mb-4 h-8 w-8 text-accent" />
-                <p className="text-lg font-bold">{audience}</p>
-                <p className="mt-2 text-sm text-on-surface-variant">
-                  Tournament-centered participation with clear registration and event operations.
-                </p>
+                <p className="text-lg font-bold">{audience.title}</p>
+                <p className="mt-2 text-sm leading-6 text-on-surface-variant">{audience.description}</p>
               </div>
             ))}
           </div>
