@@ -14,8 +14,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="max-w-md text-sm leading-6 text-gray-300">
-              Inspiring and growing cricket across the USA through accessible coaching,
-              inclusive tournaments, mentorship, and community-driven development.
+              Growing cricket across the USA by organizing inclusive Youth and Adult
+              tournaments that bring communities together.
             </p>
           </div>
 

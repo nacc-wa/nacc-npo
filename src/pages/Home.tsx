@@ -1,6 +1,5 @@
 import {
-  AcademicCapIcon,
-  HeartIcon,
+  MapPinIcon,
   TrophyIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
@@ -8,19 +7,19 @@ import { Link } from 'react-router-dom';
 
 const pillars = [
   {
-    title: 'Learn',
-    description: 'Accessible coaching, fundamentals, rules education, and skill-building clinics.',
-    icon: AcademicCapIcon,
+    title: 'Youth Competition',
+    description: 'Age-group tournaments from U-11 and up, built for organized, competitive cricket.',
+    icon: UserGroupIcon,
   },
   {
-    title: 'Play',
-    description: 'Structured tournaments and community fixtures for new and experienced players.',
+    title: 'Adult Competition',
+    description: 'Structured tournaments and community fixtures for clubs, teams, and independent players.',
     icon: TrophyIcon,
   },
   {
-    title: 'Thrive',
-    description: 'Mentorship, leadership opportunities, and pathways for the next cricket leaders.',
-    icon: HeartIcon,
+    title: 'Regional Growth',
+    description: 'Washington is our current base, with a long-term vision to expand NACC events across every region.',
+    icon: MapPinIcon,
   },
 ];
 
@@ -43,9 +42,9 @@ export default function Home() {
               Growing cricket as a source of unity, joy, and opportunity.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-200 sm:text-xl">
-              NACC inspires a love for cricket across the USA by creating opportunities
-              for children, teens, and adults to learn, play, and thrive through coaching,
-              mentorship, skill development, and inclusive tournaments.
+              NACC grows cricket in the USA by organizing inclusive Youth and Adult
+              tournaments that give players, teams, families, and communities a place
+              to compete, connect, and celebrate the sport.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/register" className="btn btn-accent">
@@ -68,9 +67,9 @@ export default function Home() {
             </div>
             <p className="section-copy">
               Our mission is to inspire and grow a love for cricket across the USA by
-              creating opportunities for individuals of all ages to learn, play, and thrive.
-              We foster talent and passion through coaching, mentorship, and skill development
-              while promoting competitive tournaments that bring communities together.
+              creating well-run tournaments for players of all ages. We currently serve
+              cricket communities from Washington, with a long-term vision to bring NACC
+              events to more regions across the country.
             </p>
           </div>
 
@@ -92,29 +91,29 @@ export default function Home() {
       <section className="bg-surface-container-low py-20">
         <div className="container grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="eyebrow mb-3">Programs</p>
-            <h2 className="section-title">Coaching, mentorship, tournaments, and volunteer pathways.</h2>
+            <p className="eyebrow mb-3">Who we serve</p>
+            <h2 className="section-title">Youth and Adult tournament pathways.</h2>
             <p className="section-copy mt-5">
-              NACC is designed for families discovering cricket, young players developing
-              fundamentals, adult teams seeking organized competition, and community leaders
-              who want to use sport to bring people together.
+              NACC is designed for Youth players starting at U-11, Adult teams seeking
+              organized competition, families supporting the game, and community leaders
+              who want cricket events that are reliable, inclusive, and competitive.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <Link to="/programs" className="btn btn-primary">
-                Explore Programs
+              <Link to="/tournaments" className="btn btn-primary">
+                View Tournaments
               </Link>
               <Link to="/contact" className="btn btn-secondary">
-                Become a Volunteer
+                Partner With NACC
               </Link>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {['Children', 'Teens', 'Adults', 'Community partners'].map((audience) => (
+            {['Youth U-11+', 'Adult Teams', 'Families', 'Community partners'].map((audience) => (
               <div key={audience} className="panel p-6">
                 <UserGroupIcon className="mb-4 h-8 w-8 text-accent" />
                 <p className="text-lg font-bold">{audience}</p>
                 <p className="mt-2 text-sm text-on-surface-variant">
-                  Age-aware programming with inclusive expectations and clear next steps.
+                  Tournament-centered participation with clear registration and event operations.
                 </p>
               </div>
             ))}

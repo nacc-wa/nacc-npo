@@ -1,7 +1,7 @@
 import { type FormEvent, useState } from 'react';
 import { submitContact } from '../services/nacc-service';
 
-const topics = ['Tournament registration', 'Youth programs', 'Volunteer', 'Sponsorship', 'Ground partnership', 'General'];
+const topics = ['Tournament registration', 'Youth tournaments', 'Adult tournaments', 'Volunteer', 'Sponsorship', 'Ground partnership', 'General'];
 
 const Contact = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -38,8 +38,8 @@ const Contact = () => {
             <p className="eyebrow mb-3">Contact</p>
             <h1 className="section-title">Start a conversation with NACC.</h1>
             <p className="section-copy mt-5">
-              Reach out about tournaments, coaching programs, sponsorships, volunteering,
-              ground partnerships, or general community cricket questions.
+              Reach out about Youth or Adult tournaments, sponsorships, volunteering,
+              ground partnerships, regional expansion, or general community cricket questions.
             </p>
 
             <div className="panel mt-8 p-6">
@@ -47,7 +47,7 @@ const Contact = () => {
               <div className="grid gap-4 text-sm text-on-surface-variant">
                 <p><strong>Admin:</strong> admin@northamericacricketconference.org</p>
                 <p><strong>Support:</strong> support@northamericacricketconference.org</p>
-                <p><strong>Region:</strong> Serving cricket communities across the United States</p>
+                <p><strong>Region:</strong> Based in Washington and building toward more regions across the United States</p>
               </div>
             </div>
           </div>

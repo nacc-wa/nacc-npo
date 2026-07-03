@@ -4,7 +4,6 @@ import {Link, NavLink} from 'react-router-dom';
 
 const navItems = [
 	{label: 'About', to: '/about'},
-	{label: 'Programs', to: '/programs'},
 	{label: 'Tournaments', to: '/tournaments'},
 	{label: 'Payments', to: '/payments'},
 	{label: 'Contact', to: '/contact'}

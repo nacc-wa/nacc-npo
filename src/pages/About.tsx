@@ -1,27 +1,29 @@
+import { Link } from 'react-router-dom';
+
 const values = [
   {
     title: 'Sportsmanship',
-    description: 'We teach cricket as a game of respect, fairness, discipline, and shared joy.',
+    description: 'We expect every tournament to reflect respect, fairness, discipline, and shared joy.',
   },
   {
     title: 'Teamwork',
-    description: 'Players, coaches, volunteers, and families all contribute to a stronger cricket culture.',
+    description: 'Players, captains, volunteers, families, and partners all contribute to a stronger cricket culture.',
   },
   {
     title: 'Inclusivity',
-    description: 'NACC welcomes beginners, experienced players, families, and communities of every background.',
+    description: 'NACC welcomes Youth and Adult teams, families, and communities of every background.',
   },
   {
     title: 'Growth',
-    description: 'We build skill, confidence, leadership, and long-term love for the game.',
+    description: 'We use organized tournaments to grow cricket participation from Washington to more regions over time.',
   },
 ];
 
 const timeline = [
-  'Introduce cricket through clinics, camps, and school/community partnerships.',
-  'Develop players with age-aware coaching, mentoring, and structured practice.',
-  'Bring communities together through competitive and festival-style tournaments.',
-  'Create leadership opportunities for players, parents, coaches, and volunteers.',
+  'Organize Youth tournaments from U-11 and up, alongside Adult competitions.',
+  'Coordinate teams, venues, grounds, registrations, payments, and event communication.',
+  'Bring communities together through competitive and festival-style cricket events.',
+  'Expand from our Washington base toward a broader regional NACC tournament calendar.',
 ];
 
 const About = () => {
@@ -35,8 +37,9 @@ const About = () => {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/80">
             North America Cricket Conference is a non-profit organization dedicated to
-            inspiring a love for cricket across the United States by providing opportunities
-            for children, teens, and adults to engage with the sport.
+            growing cricket in the United States through organized Youth and Adult
+            tournaments. NACC is rooted in Washington today, with a long-term vision
+            to bring inclusive cricket events to more regions.
           </p>
         </div>
       </section>
@@ -45,19 +48,18 @@ const About = () => {
         <div className="container grid gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <p className="eyebrow mb-3">What we do</p>
-            <h2 className="section-title">Accessible coaching and organized competition.</h2>
+            <h2 className="section-title">Tournament operations for all age groups.</h2>
           </div>
           <div className="grid gap-6">
             <p className="section-copy">
-              Our programs offer coaching, mentorship, and skill development that help
-              participants learn, play, and thrive. Through competitive tournaments and
-              community-driven initiatives, we promote cricket while fostering teamwork,
-              sportsmanship, and inclusivity.
+              NACC creates organized cricket opportunities by planning tournaments,
+              managing registration, coordinating grounds, communicating with teams,
+              and supporting event-day operations for Youth and Adult competition.
             </p>
             <p className="section-copy">
               We believe in the power of sports to unite and uplift. NACC is committed
-              to cultivating the next generation of cricket enthusiasts, volunteers,
-              coaches, and community leaders.
+              to building a reliable tournament platform that helps cricket communities
+              gather, compete, volunteer, sponsor, and grow together.
             </p>
           </div>
         </div>
@@ -84,7 +86,7 @@ const About = () => {
         <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="eyebrow mb-3">Community model</p>
-            <h2 className="section-title">A practical path from first session to lifelong involvement.</h2>
+            <h2 className="section-title">A practical path from local events to national reach.</h2>
           </div>
           <div className="grid gap-4">
             {timeline.map((item, index) => (
@@ -95,6 +97,25 @@ const About = () => {
                 <p className="self-center text-on-surface-variant">{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20">
+        <div className="container">
+          <div className="rounded-lg bg-primary p-8 text-white">
+            <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <h2 className="text-2xl font-bold">Bring NACC tournaments to your community.</h2>
+                <p className="mt-3 max-w-3xl text-white/80">
+                  Parks, grounds, team captains, sponsors, and volunteers can start a
+                  conversation about hosting or supporting Youth and Adult cricket events.
+                </p>
+              </div>
+              <Link to="/contact" className="btn btn-secondary">
+                Partner With NACC
+              </Link>
+            </div>
           </div>
         </div>
       </section>

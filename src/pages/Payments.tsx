@@ -17,7 +17,7 @@ const paymentMethods = [
   {
     title: 'Sponsor or waiver tracking',
     description: 'Admins can mark approved registrations as waived or sponsored.',
-    detail: 'Useful for community access, youth support, and nonprofit partnerships.',
+    detail: 'Useful for Youth access, community teams, and nonprofit partnerships.',
     icon: ShieldCheckIcon,
   },
 ];
@@ -78,9 +78,9 @@ const Payments = () => {
           <div className="rounded-lg bg-primary p-7 text-white">
             <h2 className="text-2xl font-bold">Support community cricket</h2>
             <p className="mt-4 leading-7 text-white/80">
-              Sponsors and donors help keep coaching, youth development, and community
-              tournaments accessible. Contact NACC to discuss equipment support, ground
-              partnerships, scholarship funds, or event sponsorship.
+              Sponsors and donors help keep Youth and Adult tournaments accessible.
+              Contact NACC to discuss equipment support, ground partnerships,
+              scholarship funds, regional expansion, or event sponsorship.
             </p>
             <Link to="/contact" className="btn btn-secondary mt-6">
               Contact NACC

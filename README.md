@@ -4,7 +4,7 @@ Production MVP website for the North America Cricket Conference non-profit.
 
 ## Features
 
-- Public NACC marketing site with mission, programs, tournament calendar, registration, payments, and contact pages.
+- Public NACC marketing site with mission, tournament calendar, registration, payments, and contact pages.
 - Supabase-ready data layer for tournaments, registrations, teams, grounds, ground reservations, contacts, and payments.
 - Admin dashboard for reviewing registrations, creating tournaments, tracking reservations, and updating payment status.
 - Supabase is the source of truth for public and admin data.
