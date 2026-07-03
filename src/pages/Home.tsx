@@ -66,11 +66,11 @@ export default function Home() {
               teams, families, and supporters a dependable place to compete and connect.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link to="/register" className="btn btn-accent">
-                Register a Team
-              </Link>
               <Link to="/tournaments" className="btn border border-white/30 bg-white/10 text-white hover:bg-white/20">
                 View Tournament Calendar
+              </Link>
+              <Link to="/contact" className="btn btn-accent">
+                Partner With NACC
               </Link>
             </div>
           </div>

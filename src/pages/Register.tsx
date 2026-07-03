@@ -1,5 +1,5 @@
 import { type FormEvent, useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Navigate, useSearchParams } from 'react-router-dom';
 import type { Tournament } from '../data/nacc';
 import { getPublicTournaments, submitRegistration } from '../services/nacc-service';
 
@@ -29,6 +29,7 @@ const emptyForm: RegistrationForm = {
 
 const Register = () => {
   const [searchParams] = useSearchParams();
+  const requestedTournament = searchParams.get('tournament');
   const [tournaments, setTournaments] = useState<Tournament[]>([]);
   const [form, setForm] = useState<RegistrationForm>(emptyForm);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -37,17 +38,14 @@ const Register = () => {
   useEffect(() => {
     getPublicTournaments()
       .then((items) => {
-        const open = items.filter((item) => item.status === 'Registration Open');
-        const requested = searchParams.get('tournament');
-        const defaultTournament = requested ?? open[0]?.id ?? items[0]?.id ?? '';
         setTournaments(items);
-        setForm((current) => ({ ...current, tournament_id: defaultTournament }));
+        setForm((current) => ({ ...current, tournament_id: requestedTournament ?? '' }));
       })
       .catch((issue: unknown) => {
         setStatus('error');
         setMessage(issue instanceof Error ? issue.message : 'Unable to load tournaments.');
       });
-  }, [searchParams]);
+  }, [requestedTournament]);
 
   const selectedTournament = useMemo(
     () => tournaments.find((tournament) => tournament.id === form.tournament_id),
@@ -76,6 +74,10 @@ const Register = () => {
       setMessage(issue instanceof Error ? issue.message : 'Registration could not be submitted.');
     }
   };
+
+  if (!requestedTournament) {
+    return <Navigate to="/tournaments" replace />;
+  }
 
   return (
     <div className="bg-surface py-20">

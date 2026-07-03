@@ -1,6 +1,7 @@
 import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
 import {useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
+import SocialLinks from '../SocialLinks';
 
 const navItems = [
 	{label: 'About', to: '/about'},
@@ -55,9 +56,7 @@ export default function Navbar() {
 								{item.label}
 							</NavLink>
 						))}
-						<Link to='/register' className='btn btn-accent ml-2'>
-							Register
-						</Link>
+						<SocialLinks className='ml-2' />
 					</div>
 
 					<button
@@ -92,12 +91,16 @@ export default function Navbar() {
 								{item.label}
 							</NavLink>
 						))}
-						<Link
-							to='/register'
-							className='btn btn-accent mt-2'
-							onClick={() => setIsOpen(false)}>
-							Register
-						</Link>
+						<div className='mt-4 border-t border-white/10 pt-4'>
+							<p className='mb-3 text-xs font-bold uppercase text-white/50'>
+								Follow NACC
+							</p>
+							<SocialLinks
+								className='grid grid-cols-3 gap-2'
+								linkClassName='h-11 w-full border-white/15 bg-white/5'
+								showLabels
+							/>
+						</div>
 					</div>
 				</div>
 			)}

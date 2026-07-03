@@ -35,18 +35,13 @@ const Tournaments = () => {
   return (
     <div className="bg-surface py-20">
       <div className="container">
-        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-3">Tournament calendar</p>
-            <h1 className="section-title">Structured cricket events that bring communities together.</h1>
-            <p className="section-copy mt-5">
-              View upcoming NACC tournaments, registration windows, formats, entry fees,
-              and venue planning details.
-            </p>
-          </div>
-          <Link to="/register" className="btn btn-primary">
-            Register a Team
-          </Link>
+        <div className="max-w-3xl">
+          <p className="eyebrow mb-3">Tournament calendar</p>
+          <h1 className="section-title">Structured cricket events that bring communities together.</h1>
+          <p className="section-copy mt-5">
+            View upcoming NACC tournaments, registration windows, formats, entry fees,
+            and venue planning details.
+          </p>
         </div>
 
         {error && (

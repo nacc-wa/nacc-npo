@@ -1,3 +1,5 @@
+import SocialLinks from '../SocialLinks';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -26,6 +28,9 @@ const Footer = () => {
               <li>support@northamericacricketconference.org</li>
               <li>Serving cricket communities across the USA</li>
             </ul>
+            <div className="mt-5">
+              <SocialLinks linkClassName="border-white/15 bg-white/5" />
+            </div>
           </div>
         </div>
 
