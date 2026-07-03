@@ -21,17 +21,18 @@ npm run dev
 1. Open your Supabase project.
 2. Go to `SQL Editor`.
 3. Run [`supabase/schema.sql`](./supabase/schema.sql).
-4. Go to `Project Settings` -> `API`.
-5. Copy the project URL and publishable key.
-6. Create `.env.local`:
+4. Run [`supabase/facebook-2026-tournaments.sql`](./supabase/facebook-2026-tournaments.sql) to add the 2026 tournaments found from public NACC Facebook posts.
+5. Go to `Project Settings` -> `API`.
+6. Copy the project URL and publishable key.
+7. Create `.env.local`:
 
 ```bash
 VITE_SUPABASE_URL=your-project-url
 VITE_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
 ```
 
-7. Restart the dev server.
-8. Go to `Authentication` -> `Users` -> `Add user`, then create `admin@northamericacricketconference.org` with the password you want to use at `/admin/login`.
+8. Restart the dev server.
+9. Go to `Authentication` -> `Users` -> `Add user`, then create `admin@northamericacricketconference.org` with the password you want to use at `/admin/login`.
 
 ## Vercel deployment
 
