@@ -33,6 +33,17 @@ VITE_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
 7. Restart the dev server.
 8. Go to `Authentication` -> `Users` -> `Add user`, then create `admin@northamericacricketconference.org` with the password you want to use at `/admin/login`.
 
+## Vercel deployment
+
+Add these environment variables in the Vercel project settings for Production, Preview, and Development:
+
+```bash
+VITE_SUPABASE_URL=your-project-url
+VITE_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
+```
+
+The included [`vercel.json`](./vercel.json) rewrites all routes to `index.html` so direct visits to React routes like `/admin`, `/about`, and `/tournaments/seattle-open-2026` work in production.
+
 The SQL creates these tables and RLS policies:
 
 - `tournaments`
