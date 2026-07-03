@@ -96,9 +96,8 @@ export default function Navbar() {
 								Follow NACC
 							</p>
 							<SocialLinks
-								className='grid grid-cols-3 gap-2'
-								linkClassName='h-11 w-full border-white/15 bg-white/5'
-								showLabels
+								className='gap-3'
+								linkClassName='h-11 min-w-11 border-white/15 bg-white/5 px-0'
 							/>
 						</div>
 					</div>
