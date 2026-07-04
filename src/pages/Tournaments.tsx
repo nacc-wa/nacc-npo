@@ -22,6 +22,22 @@ const getStatusClass = (status: Tournament['status']) => {
   return 'bg-surface-container text-dark';
 };
 
+const getCardSummary = (tournament: Tournament) => {
+  if (tournament.status === 'Completed') {
+    return 'Concluded';
+  }
+  if (tournament.status === 'In Progress') {
+    return 'In progress';
+  }
+  if (tournament.status === 'Registration Open') {
+    return tournament.fee && tournament.fee !== 'Not specified' ? tournament.fee : 'Registration open';
+  }
+  if (tournament.registration_label === 'Registration Closed') {
+    return 'Registration closed';
+  }
+  return tournament.status;
+};
+
 const Tournaments = () => {
   const [tournaments, setTournaments] = useState<Tournament[]>([]);
   const [error, setError] = useState('');
@@ -39,7 +55,7 @@ const Tournaments = () => {
           <p className="eyebrow mb-3">Tournament calendar</p>
           <h1 className="section-title">Structured cricket events that bring communities together.</h1>
           <p className="section-copy mt-5">
-            View upcoming NACC tournaments, registration windows, formats, entry fees,
+            View upcoming NACC tournaments, registration windows, formats,
             and venue planning details.
           </p>
         </div>
@@ -97,8 +113,7 @@ const Tournaments = () => {
                       <div className="flex items-center gap-3">
                         <TrophyIcon className="h-6 w-6 text-accent" />
                         <div>
-                          <p className="font-bold">{tournament.fee}</p>
-                          <p className="text-sm text-on-surface-variant">entry fee</p>
+                          <p className="font-bold">{getCardSummary(tournament)}</p>
                         </div>
                       </div>
                       <Link to={`/tournaments/${tournament.id}`} className="btn btn-primary">
