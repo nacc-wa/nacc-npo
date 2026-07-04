@@ -5,7 +5,7 @@
 -- Notes:
 -- - Seattle Open 2026 is already managed in schema.sql/seattle-open-2026.sql.
 -- - Facebook access exposed public posts back to April 2026 before the login wall blocked deeper review.
--- - Masters T100 end date is inferred as the last Friday in May 2026 because the flyer says May 2026, Mondays and Fridays.
+-- - Masters T100 dates were corrected from organizer feedback after the Facebook review.
 
 insert into public.tournaments (
   id,
@@ -31,19 +31,39 @@ insert into public.tournaments (
     'nacc-masters-t100-2026',
     'NACC Masters T100 League 2026',
     'Masters 40+',
-    'Completed',
+    'In Progress',
     '2026-05-04',
-    '2026-05-29',
-    '2026-05-04',
+    '2026-07-31',
+    '2026-05-01',
     'Bellevue, Washington',
     'T100 tournament for Masters 40+, played Mondays and Fridays',
     '$1600 registration fee',
-    'A Masters 40+ T100 league announced by NACC for May 2026 in the Seattle area.',
+    'A Masters 40+ T100 league announced by NACC for the Seattle area, running from May through July 2026.',
     'adult',
     'Bellevue, WA',
     '',
-    '["Masters 40+ competition.", "T100 tournament format.", "Played on Mondays and Fridays during May 2026.", "$1600 registration fee."]'::jsonb,
-    '["Tournament began May 4, 2026.", "Match days were listed as Mondays and Fridays.", "Event was announced for Bellevue and the Seattle-area cricket community."]'::jsonb,
+    '["Masters 40+ competition.", "T100 tournament format.", "Runs from May 4 through July 31, 2026.", "$1600 registration fee."]'::jsonb,
+    '["Registration closed May 1, 2026.", "Tournament began May 4, 2026.", "Event runs through July 31, 2026.", "Match days were listed as Mondays and Fridays."]'::jsonb,
+    '',
+    'Registration Closed'
+  ),
+  (
+    'nacc-super-league-2026',
+    'NACC Super League T20 2026',
+    'Adult T20',
+    'Completed',
+    '2026-03-07',
+    '2026-04-25',
+    '2026-03-07',
+    'Klahanie Park and Forsgren Park, Issaquah, WA',
+    'T20 league',
+    '$1500 registration fee',
+    'A completed NACC Super League T20 tournament hosted in Issaquah, Washington at Klahanie Park and Forsgren Park.',
+    'adult',
+    'Issaquah, WA',
+    '/tournaments/super-league-2026.jpg',
+    '["Adult T20 league.", "Hosted in Issaquah, Washington.", "Grounds: Klahanie Park and Forsgren Park.", "$1500 registration fee."]'::jsonb,
+    '["Tournament started March 7, 2026.", "Tournament completed April 25, 2026.", "Matches were hosted across Klahanie Park and Forsgren Park."]'::jsonb,
     '',
     'Registration Closed'
   ),
@@ -105,3 +125,12 @@ on conflict (id) do update set
   structure = excluded.structure,
   registration_url = excluded.registration_url,
   registration_label = excluded.registration_label;
+
+insert into public.grounds (id, name, address, city, surface) values
+  ('klahanie-park', 'Klahanie Park', '', 'Issaquah, WA', 'Cricket ground'),
+  ('forsgren-park', 'Forsgren Park', '', 'Issaquah, WA', 'Cricket ground')
+on conflict (id) do update set
+  name = excluded.name,
+  address = excluded.address,
+  city = excluded.city,
+  surface = excluded.surface;
